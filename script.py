@@ -76,14 +76,14 @@ def point_id_parser(file):
 
 point_ids = point_id_parser(file_cleaned)
 
-#Flattening list of lists into a single list - helps when writing to csv
+# Flattening list of lists into a single list - helps when writing to csv
 point_ids = [item for sublist in point_ids for item in sublist]
 
 columns = """point_id, type, t1_magnitude, t2_magnitude, t3_magnitude,
 r1_magnitude, r2_magnitude, r3_magnitude, t1_phase, t2_phase,
 t3_phase, r1_phase, r2_phase, r3_phase, frequency"""
 
-point_ids.insert(0, columns)
+point_ids.insert(0, columns) # Inserting header
 
 
 # Writing list to csv
